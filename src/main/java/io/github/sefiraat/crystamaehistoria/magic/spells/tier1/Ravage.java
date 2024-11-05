@@ -9,6 +9,7 @@ import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.sefiraat.crystamaehistoria.utils.SpellUtils;
 import io.github.sefiraat.crystamaehistoria.utils.mobgoals.RidableGroundGoal;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedPotionEffectType;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -26,8 +27,8 @@ public class Ravage extends Spell {
         SpellCoreBuilder spellCoreBuilder = new SpellCoreBuilder(5, true, 0, false, 25, true)
             .makeInstantSpell(this::cast)
             .makeEffectingSpell(true, false)
-            .addPositiveEffect(PotionEffectType.DAMAGE_RESISTANCE, 1, 300)
-            .addPositiveEffect(PotionEffectType.INCREASE_DAMAGE, 1, 300)
+            .addPositiveEffect(VersionedPotionEffectType.RESISTANCE, 1, 300)
+            .addPositiveEffect(VersionedPotionEffectType.STRENGTH, 1, 300)
             .addPositiveEffect(PotionEffectType.ABSORPTION, 1, 300);
         setSpellCore(spellCoreBuilder.build());
     }
@@ -54,7 +55,9 @@ public class Ravage extends Spell {
 
     @ParametersAreNonnullByDefault
     public void onTick(MagicSummon magicSummon) {
-        ParticleUtils.displayParticleEffect(magicSummon.getMob(), Particle.VILLAGER_ANGRY, 1, 2);
+        // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+        // in this repo so that it still supports previous versions
+        ParticleUtils.displayParticleEffect(magicSummon.getMob(), Particle.ANGRY_VILLAGER, 1, 2);
     }
 
     @Nonnull

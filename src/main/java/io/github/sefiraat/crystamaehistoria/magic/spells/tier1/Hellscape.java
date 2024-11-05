@@ -63,13 +63,17 @@ public class Hellscape extends Spell {
 
     @ParametersAreNonnullByDefault
     public void afterProjectileHit(CastInformation castInformation) {
-        ParticleUtils.displayParticleEffect(castInformation.getMainTarget(), Particle.VILLAGER_ANGRY, 1.0, 5);
+        // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+        // in this repo so that it still supports previous versions
+        ParticleUtils.displayParticleEffect(castInformation.getMainTarget(), Particle.ANGRY_VILLAGER, 1.0, 5);
     }
 
     @ParametersAreNonnullByDefault
     public void onTick(MagicProjectile magicProjectile) {
         ParticleUtils.displayParticleEffect(magicProjectile.getProjectile(), Particle.SWEEP_ATTACK, 0.5, 1);
-        ParticleUtils.displayParticleEffect(magicProjectile.getProjectile(), Particle.VILLAGER_ANGRY, 0.5, 1);
+        // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+        // in this repo so that it still supports previous versions
+        ParticleUtils.displayParticleEffect(magicProjectile.getProjectile(), Particle.ANGRY_VILLAGER, 0.5, 1);
     }
 
     @Nonnull

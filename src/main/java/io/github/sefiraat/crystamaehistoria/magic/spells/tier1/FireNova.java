@@ -57,7 +57,9 @@ public class FireNova extends Spell {
 
     @ParametersAreNonnullByDefault
     public void afterProjectileHit(CastInformation castInformation) {
-        ParticleUtils.displayParticleEffect(castInformation.getMainTarget(), Particle.EXPLOSION_NORMAL, 1.0, 5);
+        // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+        // in this repo so that it still supports previous versions
+        ParticleUtils.displayParticleEffect(castInformation.getMainTarget(), Particle.POOF, 1.0, 5);
     }
 
     @Nonnull

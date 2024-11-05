@@ -39,7 +39,9 @@ public class Compass extends Spell {
             if (foundBlock == null) {
                 ParticleUtils.displayParticleEffect(
                     location.add(location.getDirection()),
-                    Particle.VILLAGER_ANGRY,
+                    // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+                    // in this repo so that it still supports previous versions
+                    Particle.ANGRY_VILLAGER,
                     1,
                     10
                 );

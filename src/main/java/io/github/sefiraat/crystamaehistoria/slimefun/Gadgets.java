@@ -27,6 +27,7 @@ import io.github.sefiraat.crystamaehistoria.utils.CrystaTag;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 import io.github.thebusybiscuit.slimefun4.utils.tags.SlimefunTag;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
@@ -279,7 +280,7 @@ public class Gadgets {
         final List<EntityType> soulfilledSoilSpawns = new ArrayList<>();
 
         soulfilledSoilSpawns.add(EntityType.COW);
-        soulfilledSoilSpawns.add(EntityType.MUSHROOM_COW);
+        soulfilledSoilSpawns.add(VersionedEntityType.MOOSHROOM);
         soulfilledSoilSpawns.add(EntityType.CHICKEN);
         soulfilledSoilSpawns.add(EntityType.PIG);
         soulfilledSoilSpawns.add(EntityType.SHEEP);
@@ -553,7 +554,9 @@ public class Gadgets {
             15,
             block -> ParticleUtils.displayParticleEffect(
                 block.getLocation().add(0.5, 0.5, 0.5),
-                Particle.WATER_SPLASH,
+                // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+                // in this repo so that it still supports previous versions
+                Particle.SPLASH,
                 0.5,
                 3
             )

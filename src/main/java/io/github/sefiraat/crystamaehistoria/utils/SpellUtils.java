@@ -135,7 +135,6 @@ public class SpellUtils {
         final MagicProjectile magicProjectile = new MagicProjectile(projectile);
 
         projectile.setShooter(Bukkit.getPlayer(castInformation.getCaster()));
-        projectile.setBounce(false);
         if (projectile instanceof Fireball) {
             Fireball fireball = (Fireball) projectile;
             fireball.setIsIncendiary(false);

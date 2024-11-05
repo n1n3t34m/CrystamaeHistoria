@@ -3,6 +3,7 @@ package io.github.sefiraat.crystamaehistoria.utils.mobgoals;
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.blocks.BlockPosition;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedParticle;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
@@ -27,7 +28,9 @@ public class BatteringRamGoal extends AbstractGoal<Goat> {
         double velZ = Math.abs(self.getVelocity().getZ());
 
         if (self.isOnGround() || (velX < 0.1 && velZ < 0.1)) {
-            ParticleUtils.displayParticleEffect(self, Particle.VILLAGER_ANGRY, 1, 5);
+            // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+            // in this repo so that it still supports previous versions
+            ParticleUtils.displayParticleEffect(self, Particle.ANGRY_VILLAGER, 1, 5);
             self.remove();
             return;
         }

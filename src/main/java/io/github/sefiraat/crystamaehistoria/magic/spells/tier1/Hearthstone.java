@@ -45,7 +45,9 @@ public class Hearthstone extends Spell {
         Location location = caster.getBedSpawnLocation();
         if (location == null) {
             Location casterLocation = caster.getLocation();
-            ParticleUtils.displayParticleEffect(casterLocation.add(casterLocation.getDirection()), Particle.VILLAGER_ANGRY, 1, 10);
+            // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+            // in this repo so that it still supports previous versions
+            ParticleUtils.displayParticleEffect(casterLocation.add(casterLocation.getDirection()), Particle.ANGRY_VILLAGER, 1, 10);
         } else {
             caster.teleportAsync(location, PlayerTeleportEvent.TeleportCause.PLUGIN);
         }

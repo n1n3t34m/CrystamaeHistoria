@@ -50,7 +50,9 @@ public class Gyroscopic extends Spell {
                 Location newLocation = entity.getLocation().clone();
                 newLocation.setYaw(entity.getLocation().getYaw() + 10F);
                 entity.teleport(newLocation);
-                ParticleUtils.displayParticleEffect(entity, Particle.SPELL, 1, 1);
+                // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+                // in this repo so that it still supports previous versions
+                ParticleUtils.displayParticleEffect(entity, Particle.EFFECT, 1, 1);
             }
         }
     }

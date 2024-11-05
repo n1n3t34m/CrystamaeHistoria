@@ -11,6 +11,7 @@ import io.github.sefiraat.crystamaehistoria.slimefun.items.mechanisms.liquefacti
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryType;
 import io.github.sefiraat.crystamaehistoria.utils.ParticleUtils;
 import io.github.thebusybiscuit.slimefun4.implementation.SlimefunItems;
+import io.github.thebusybiscuit.slimefun4.utils.compatibility.VersionedEntityType;
 import lombok.Getter;
 import lombok.experimental.UtilityClass;
 import org.bukkit.Color;
@@ -18,7 +19,6 @@ import org.bukkit.FireworkEffect;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
-import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Firework;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
@@ -428,7 +428,7 @@ public class Uniques {
     }
 
     private static void spawnBirthdayFirework(@Nonnull Location location, @Nonnull Color color) {
-        final Firework firework = (Firework) location.getWorld().spawnEntity(location, EntityType.FIREWORK);
+        final Firework firework = (Firework) location.getWorld().spawnEntity(location, VersionedEntityType.FIREWORK);
         final FireworkMeta fireworkMeta = firework.getFireworkMeta();
         fireworkMeta.addEffect(
             FireworkEffect.builder()

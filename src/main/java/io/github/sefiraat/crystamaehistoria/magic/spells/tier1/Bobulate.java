@@ -42,7 +42,9 @@ public class Bobulate extends Spell {
     public void fireProjectile(CastInformation castInformation) {
         final Location location = castInformation.getCastLocation();
         final Location aimLocation = location.clone().add(0, 1.5, 0).add(location.getDirection().multiply(2));
-        final MagicProjectile magicProjectile = SpellUtils.summonMagicProjectile(castInformation, EntityType.SPLASH_POTION, aimLocation);
+        // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+        // in this repo so that it still supports previous versions
+        final MagicProjectile magicProjectile = SpellUtils.summonMagicProjectile(castInformation, EntityType.POTION, aimLocation);
         magicProjectile.setVelocity(location.getDirection(), 1.5);
         magicProjectile.disableGravity();
     }

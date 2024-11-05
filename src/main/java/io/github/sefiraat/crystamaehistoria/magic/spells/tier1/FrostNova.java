@@ -53,7 +53,9 @@ public class FrostNova extends Spell {
         for (LivingEntity livingEntity : getTargets(castInformation, getProjectileAoe(castInformation), true)) {
             GeneralUtils.damageEntity(livingEntity, castInformation.getCaster(), getDamage(castInformation));
             livingEntity.setFreezeTicks(60);
-            ParticleUtils.displayParticleEffect(livingEntity, Particle.SNOW_SHOVEL, 1, 5);
+            // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+            // in this repo so that it still supports previous versions
+            ParticleUtils.displayParticleEffect(livingEntity, Particle.ITEM_SNOWBALL, 1, 5);
         }
     }
 

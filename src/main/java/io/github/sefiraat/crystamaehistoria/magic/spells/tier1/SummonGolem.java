@@ -59,7 +59,9 @@ public class SummonGolem extends Spell {
         ) {
             mob.teleport(player.getLocation());
         }
-        ParticleUtils.displayParticleEffect(magicSummon.getMob(), Particle.SLIME, 1, 3);
+        // TODO: do I PR to slimefun to include this in the VersionedParticle class or do I make a class
+        // in this repo so that it still supports previous versions
+        ParticleUtils.displayParticleEffect(magicSummon.getMob(), Particle.ITEM_SLIME, 1, 3);
     }
 
     @Nonnull
