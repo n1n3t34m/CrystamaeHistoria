@@ -52,12 +52,10 @@ public interface MagicPaintbrush {
         }
 
         if (block != null && BlockStorage.check(block) == null && GeneralUtils.hasPermission(event.getPlayer(), block, Interaction.PLACE_BLOCK)) {
-            if (tryPaintBlock(profile, block)) {
-                if (Tag.SHULKER_BOXES.isTagged(block.getType())) {
-                    event.cancel();  // Do not actually open shulker box afterward
-                }
-                return true;
+            if (Tag.SHULKER_BOXES.isTagged(block.getType())) {
+                event.cancel();  // Don't open shulker box regardless
             }
+            return tryPaintBlock(profile, block);
         }
 
         return false;

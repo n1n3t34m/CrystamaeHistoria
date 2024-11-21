@@ -6,13 +6,14 @@ import io.github.thebusybiscuit.slimefun4.implementation.tasks.player.InfusedMag
 import io.github.thebusybiscuit.slimefun4.utils.SlimefunUtils;
 import org.bukkit.event.Listener;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.player.PlayerToggleSneakEvent;
 import org.bukkit.entity.Player;
 
 public class DisplacedVoidListener implements Listener {
 
     // https://github.com/Slimefun/Slimefun4/blob/master/src/main/java/io/github/thebusybiscuit/slimefun4/implementation/listeners/GadgetsListener.java
-    @EventHandler(ignoreCancelled = true)
+    @EventHandler(priority = EventPriority.LOW, ignoreCancelled = true)
     public void onToggleSneak(PlayerToggleSneakEvent e) {
         if (e.isSneaking()) {
             Player p = e.getPlayer();
