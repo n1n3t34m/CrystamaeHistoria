@@ -18,6 +18,7 @@ import io.github.sefiraat.crystamaehistoria.listeners.SatchelListener;
 import io.github.sefiraat.crystamaehistoria.listeners.SpellCastListener;
 import io.github.sefiraat.crystamaehistoria.listeners.SpellEffectListener;
 import io.github.sefiraat.crystamaehistoria.listeners.ThaumaturgicSaltsListener;
+import io.github.sefiraat.crystamaehistoria.listeners.DisplacedVoidListener;
 import org.bukkit.event.Listener;
 
 public class ListenerManager {
@@ -40,6 +41,7 @@ public class ListenerManager {
         addListener(new PoseChangerListener());
         addListener(new PhilosophersSprayListener());
         addListener(new MiscListener());
+        addListener(new DisplacedVoidListener());
     }
 
     private void addListener(Listener listener) {
