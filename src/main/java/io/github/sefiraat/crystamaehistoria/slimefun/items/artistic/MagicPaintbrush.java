@@ -10,6 +10,7 @@ import org.bukkit.DyeColor;
 import org.bukkit.Material;
 import org.bukkit.Tag;
 import org.bukkit.block.Block;
+import org.bukkit.block.ShulkerBox;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.entity.Axolotl;
 import org.bukkit.entity.Entity;
@@ -139,7 +140,11 @@ public interface MagicPaintbrush {
         } else if (Tag.SHULKER_BOXES.isTagged(material)
             && block.getType() != profile.getMaterialShulker()
         ) {
+            ShulkerBox box = (ShulkerBox) block.getState();
+            ItemStack[] inventory = box.getInventory().getContents();
             block.setType(profile.getMaterialShulker());
+            box = (ShulkerBox) block.getState();  // New block state
+            box.getInventory().setContents(inventory);  // Restore inventory
             return true;
         }
 
