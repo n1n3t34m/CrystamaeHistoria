@@ -42,20 +42,23 @@ public class SatchelListener implements Listener {
 
                     if (possibleSatchel.getAmount() > 1) {
                         player.sendMessage(ThemeType.WARNING.getColor() + "You have stacked Crystamae Satchels. They will not work until unstacked.");
-                        return;
+                        continue;  // Try next
                     }
 
-                    if (crystamageSatchel.tryAddItem(possibleSatchel, itemStack, crystal)) {
-                        final java.awt.Color baseColor = ThemeType.getByType(crystal.getType()).getColor().getColor();
-                        final Color color = Color.fromRGB(baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue());
-                        final Particle.DustOptions dustOptions = new Particle.DustOptions(color, 1);
+                    //if (crystamageSatchel.tryAddItem(possibleSatchel, itemStack, crystal)) {
+                    if (crystamageSatchel.canHold(crystal)) {  // Clearer setup warning
+                        if (crystamageSatchel.tryAddItem(possibleSatchel, crystal.getRarity(), crystal.getType(), itemStack.getAmount())) {
+                            final java.awt.Color baseColor = ThemeType.getByType(crystal.getType()).getColor().getColor();
+                            final Color color = Color.fromRGB(baseColor.getRed(), baseColor.getGreen(), baseColor.getBlue());
+                            final Particle.DustOptions dustOptions = new Particle.DustOptions(color, 1);
 
-                        ParticleUtils.displayParticleEffect(item, 0.4, 10, dustOptions);
-                        item.remove();
-                        e.setCancelled(true);
-                        return;
-                    } else {
-                        player.sendMessage(ThemeType.WARNING.getColor() + "You have a Crystamae Satchel that has not yet been setup. Open the satchel first.");
+                            ParticleUtils.displayParticleEffect(item, 0.4, 10, dustOptions);
+                            item.remove();
+                            e.setCancelled(true);
+                            return;
+                        } else {
+                            player.sendMessage(ThemeType.WARNING.getColor() + "You have a Crystamae Satchel that has not yet been setup. Open the satchel first.");
+                        }
                     }
                 }
             }

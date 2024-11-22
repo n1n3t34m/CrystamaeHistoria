@@ -76,9 +76,9 @@ public class CrystamageSatchel extends UnplaceableBlock {
         };
     }
 
-    public boolean tryAddItem(@Nonnull ItemStack satchel, @Nonnull ItemStack crystalStack, @Nonnull Crystal crystal) {
+    /*public boolean tryAddItem(@Nonnull ItemStack satchel, @Nonnull ItemStack crystalStack, @Nonnull Crystal crystal) {
         return canHold(crystal) && tryAddItem(satchel, crystal.getRarity(), crystal.getType(), crystalStack.getAmount());
-    }
+    }*/
 
     public boolean tryAddItem(@Nonnull ItemStack satchel, @Nonnull StoryRarity rarity, @Nonnull StoryType type, int amount) {
         final ItemMeta itemMeta = satchel.getItemMeta();
@@ -103,7 +103,7 @@ public class CrystamageSatchel extends UnplaceableBlock {
         return true;
     }
 
-    private boolean canHold(@Nonnull Crystal crystal) {
+    public boolean canHold(@Nonnull Crystal crystal) {
         switch (crystal.getRarity()) {
             case UNIQUE:
                 return true;
