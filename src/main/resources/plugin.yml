@@ -9,11 +9,12 @@ depend:
   - Slimefun
 softdepend:
   - mcMMO
-  - SlimeTinker
   - ExoticGarden
+  - SlimeTinker
   - HeadLimiter
-  - RoseStacker
+  - Networks
   - WildStacker
+  - RoseStacker
   - Netheopoiesis
 commands:
   crystamaehistoria:

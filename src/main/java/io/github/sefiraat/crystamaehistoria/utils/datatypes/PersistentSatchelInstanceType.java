@@ -1,6 +1,6 @@
 package io.github.sefiraat.crystamaehistoria.utils.datatypes;
 
-import de.jeff_media.morepersistentdatatypes.DataType;
+import com.jeff_media.morepersistentdatatypes.DataType;
 import io.github.sefiraat.crystamaehistoria.slimefun.items.tools.satchel.SatchelInstance;
 import io.github.sefiraat.crystamaehistoria.stories.definition.StoryRarity;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
