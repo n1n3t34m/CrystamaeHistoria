@@ -5435,7 +5435,7 @@ GRANITE_WALL:
       - those inside save and sound.
     shards: [ 0,0,0,1,1,0,1,0,0 ]
 
-GRASS:
+SHORT_GRASS:
   tier: 1
   elements:
     - ANIMAL
@@ -11061,7 +11061,7 @@ SCAFFOLDING:
       - uhm... Pillar.. up... hmm
     shards: [ 0,1,0,0,1,0,0,0,0 ]
 
-SCUTE:
+TURTLE_SCUTE:
   tier: 2
   elements:
     - ANIMAL
