@@ -52,8 +52,9 @@ public class MiscListener implements Listener {
         if (SlimefunItem.getByItem(itemStack) instanceof MagicPaintbrush) {
             e.setCancelled(true);
             final Entity entity = e.getEntity();
-            if (entity instanceof Player) {
-                entity.sendMessage(ThemeType.WARNING.getColor() + "You can't shoot a Paintbrush!");
+            if (entity instanceof Player p) {
+                p.sendMessage(ThemeType.WARNING.getColor() + "You can't shoot a Paintbrush!");
+                if (e.shouldConsumeItem()) p.getWorld().dropItemNaturally(p.getLocation(), itemStack);  // Drop brush
             }
         }
     }
