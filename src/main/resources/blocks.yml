@@ -33,7 +33,7 @@ ACACIA_DOOR:
     name: Gateway (Acacia)
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,0,1 ]
@@ -657,7 +657,7 @@ BIRCH_DOOR:
     name: Gateway (Birch)
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,0,1 ]
@@ -2775,7 +2775,7 @@ CRIMSON_DOOR:
     name: Gateway (Crimson)
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,1,1 ]
@@ -3312,7 +3312,7 @@ DARK_OAK_DOOR:
     name: Gateway (Dark Oak)
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,0,1 ]
@@ -6473,7 +6473,7 @@ JUNGLE_DOOR:
     name: Gateway (Jungle)
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,0,1 ]
@@ -8619,7 +8619,7 @@ OAK_DOOR:
     name: Gateway
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,0,1 ]
@@ -11669,7 +11669,7 @@ SPRUCE_DOOR:
     name: Gateway
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,0,1 ]
@@ -12694,7 +12694,7 @@ WARPED_DOOR:
     name: Gateway
     type: HUMAN
     lore:
-      - Every entrance  is also an exit.
+      - Every entrance is also an exit.
       - Doors protects from the outside but
       - don't let them keep you in!
     shards: [ 0,2,0,0,1,0,0,1,1 ]
