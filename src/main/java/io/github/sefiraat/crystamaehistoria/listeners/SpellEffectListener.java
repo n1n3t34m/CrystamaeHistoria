@@ -68,7 +68,7 @@ public class SpellEffectListener implements Listener {
 
         castInfo.setProjectileLocation(magicProjectile.getLocation());
 
-        if (entityHitAllowed(castInfo, hitEntity)) {
+        if (hitEntity != null && entityHitAllowed(castInfo, hitEntity)) {
             castInfo.setMainTarget((LivingEntity) hitEntity);
             castInfo.setDamageLocation(hitEntity.getLocation());
             castInfo.runPreAffectEvent();
