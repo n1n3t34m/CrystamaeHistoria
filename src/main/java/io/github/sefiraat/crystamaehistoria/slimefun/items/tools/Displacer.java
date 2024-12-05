@@ -2,6 +2,7 @@ package io.github.sefiraat.crystamaehistoria.slimefun.items.tools;
 
 import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
+import io.github.sefiraat.crystamaehistoria.utils.theme.ThemeType;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
@@ -286,7 +287,7 @@ public class Displacer extends LimitedUseItem {
 
     private void convertBlock(@Nonnull Player player, @Nonnull Block block) {
         if (GeneralUtils.hasPermission(player, block, Interaction.BREAK_BLOCK)) {
-            convertBlock(block);
+            if (!convertBlock(block)) player.sendMessage(ThemeType.WARNING.getColor() + "Can't shift this block");
         }
     }
 
@@ -307,6 +308,8 @@ public class Displacer extends LimitedUseItem {
             itemFrame((ItemFrame) entity);
         } else if (entityType == EntityType.ZOMBIE_VILLAGER) {
             zombieVillager(player, (ZombieVillager) entity);
+        } else {
+            player.sendMessage(ThemeType.WARNING.getColor() + "Can't shift that entity");
         }
     }
 
@@ -321,9 +324,9 @@ public class Displacer extends LimitedUseItem {
         zombieVillager.setConversionTime(200);
     }
 
-    public static void convertBlock(@Nonnull Block block) {
+    public static boolean convertBlock(@Nonnull Block block) {
         if (BlockStorage.check(block) != null) {
-            return;
+            return true;  // Do not trigger warning message
         }
 
         Material material = block.getType();
@@ -335,7 +338,11 @@ public class Displacer extends LimitedUseItem {
             farmland(block);
         } else if (material == Material.DIRT) {
             dirt(block);
+        } else {
+            return false;
         }
+
+        return true;
     }
 
     private static void farmland(@Nonnull Block block) {
