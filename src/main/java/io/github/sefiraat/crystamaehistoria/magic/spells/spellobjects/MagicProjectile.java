@@ -48,9 +48,12 @@ public class MagicProjectile {
     @ParametersAreNonnullByDefault
     public void setVelocity(Vector vector, double speed) {
         Projectile projectile = (Projectile) Bukkit.getEntity(projectileUUID);
-        // Fireball projectiles want to move wrongly :)
-        if (projectile instanceof Fireball) {
-            ((Fireball) projectile).setDirection(vector);
+        if (projectile != null) {
+            // Fireball projectiles want to move wrongly :)
+            if (projectile instanceof Fireball) {
+                ((Fireball) projectile).setDirection(vector);
+            }
+
             projectile.setVelocity(vector.multiply(speed));
         }
     }
