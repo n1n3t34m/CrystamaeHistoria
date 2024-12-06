@@ -12,6 +12,7 @@ import io.github.sefiraat.crystamaehistoria.utils.mobgoals.FlyingBatGoal;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.Particle;
+import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.Bat;
 import org.bukkit.entity.EntityType;
 
@@ -46,7 +47,7 @@ public class PhantomsFlight extends Spell {
             this::onTick
         );
         Bat bat = (Bat) magicSummon.getMob();
-        bat.setInvisible(true);
+        bat.getAttribute(Attribute.GENERIC_SCALE).setBaseValue(10);  // Requires 1.20.5+ client to see
         bat.setInvulnerable(true);
         bat.addPassenger(castInformation.getCasterAsPlayer());
     }
@@ -71,8 +72,8 @@ public class PhantomsFlight extends Spell {
     @Override
     public String[] getLore() {
         return new String[]{
-            "Summons a dragon to ride.",
-            "Getting off the dragon will make",
+            "Summons a giant bat to ride.",
+            "Getting off the bat will make",
             "it fly away."
         };
     }
