@@ -40,7 +40,7 @@ public class Chaos extends Spell {
         final int shots = 10;
         final double minRadius = 1;
         final double maxRadius = getRange(castInformation);
-        final Location location = caster.getLocation();
+        final Location location = caster != null ? caster.getLocation() : castInformation.getCastLocation();
         final Vector startVector = new Vector(0, 1.5, 1);
         final double alessioMath = Math.PI / 180;
 
@@ -56,7 +56,7 @@ public class Chaos extends Spell {
             if (pointLocation.getBlock().isEmpty()) {
                 final MagicProjectile projectile = SpellUtils.summonMagicProjectile(castInformation, EntityType.SPECTRAL_ARROW, pointLocation, this::onTick);
                 projectile.getProjectile().setGravity(false);
-                projectile.setVelocity(caster.getEyeLocation().getDirection(), 1);
+                projectile.setVelocity(caster != null ? caster.getEyeLocation().getDirection() : castInformation.getCastDirection(), 1);
             } else {
                 GeneralUtils.tryBreakBlock(castInformation.getCaster(), block);
             }
