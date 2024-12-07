@@ -9,7 +9,7 @@ import org.bukkit.event.Listener;
 
 public class MagicSummonListener implements Listener {
 
-	// Despawn Magic Summons after reloading to prevent wierd interactions
+	// Despawn Magic Summons after reloading to prevent weird interactions
 	@EventHandler
 	public void onEntityAddToWorld(EntityAddToWorldEvent e) {
 		Entity entity = e.getEntity();
@@ -22,10 +22,8 @@ public class MagicSummonListener implements Listener {
 				.findFirst()
 				.ifPresent(x -> {
 					CrystamaeHistoria.getInstance().getLogger().info("Removing MagicSummon " + x.mobUUID);
-					Bukkit.getScheduler().runTaskLater(CrystamaeHistoria.getInstance(), entity::remove, 1);
-					CrystamaeHistoria.getSummonedEntityMap().remove(x);
+					Bukkit.getScheduler().runTaskLater(CrystamaeHistoria.getInstance(), x::kill, 1);
 				});
-
 	}
 
 }

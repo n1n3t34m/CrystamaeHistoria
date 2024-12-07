@@ -12,7 +12,7 @@ import me.mrCookieSlime.CSCoreLibPlugin.Configuration.Config;
 import me.mrCookieSlime.Slimefun.Objects.handlers.BlockTicker;
 import me.mrCookieSlime.Slimefun.api.BlockStorage;
 import org.bukkit.block.Block;
-import org.bukkit.entity.Monster;
+import org.bukkit.entity.Mob;
 import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.inventory.ItemStack;
@@ -55,12 +55,12 @@ public class MobLamp extends SlimefunItem {
 
                 @Override
                 public void tick(Block block, SlimefunItem slimefunItem, Config config) {
-                    for (Monster monster : block.getWorld().getNearbyEntitiesByType(Monster.class, block.getLocation(), radius)) {
+                    for (Mob mob : block.getWorld().getNearbyEntitiesByType(Mob.class, block.getLocation(), radius)) {
                         UUID uuid = UUID.fromString(BlockStorage.getLocationInfo(block.getLocation(), "CH_UUID"));
                         GeneralUtils.pushEntity(
                             uuid,
                             block.getLocation().clone().add(0.5, 0.5, 0.5),
-                            monster,
+                            mob,
                             force
                         );
                     }
