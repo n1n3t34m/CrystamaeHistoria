@@ -8,6 +8,8 @@ import org.bukkit.block.Block;
 import org.bukkit.block.BlockFace;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
+import org.bukkit.util.Vector;
+import org.jetbrains.annotations.NotNull;
 
 import javax.annotation.ParametersAreNonnullByDefault;
 import java.util.UUID;
@@ -21,6 +23,8 @@ public class CastInformation {
     private final int staveLevel;
     @Getter
     private final Location castLocation;
+    @Getter
+    private final Vector castDirection;
     @Getter
     @Setter
     private SpellType spellType;
@@ -63,6 +67,7 @@ public class CastInformation {
         this.caster = caster.getUniqueId();
         this.staveLevel = staveLevel;
         this.castLocation = caster.getLocation().clone();
+        this.castDirection = caster.getEyeLocation().getDirection().clone();
         this.targetedBlockOnCast = caster.getTargetBlockExact(50);
         this.targetedBlockFaceOnCast = caster.getTargetBlockFace(50);
     }
