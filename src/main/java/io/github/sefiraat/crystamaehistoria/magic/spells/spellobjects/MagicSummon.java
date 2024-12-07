@@ -39,9 +39,9 @@ public class MagicSummon {
     }
 
     public void kill() {
-        CrystamaeHistoria.getSummonedEntityMap().remove(this);
         Mob mob = (Mob) Bukkit.getEntity(mobUUID);
         if (mob != null) {
+            CrystamaeHistoria.getSummonedEntityMap().remove(this);  // Do not remove if entity was unloaded
             mob.remove();
         }
     }

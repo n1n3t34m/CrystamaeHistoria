@@ -1,24 +1,7 @@
 package io.github.sefiraat.crystamaehistoria.managers;
 
 import io.github.sefiraat.crystamaehistoria.CrystamaeHistoria;
-import io.github.sefiraat.crystamaehistoria.listeners.ArmorStandInteract;
-import io.github.sefiraat.crystamaehistoria.listeners.BlockRemovalListener;
-import io.github.sefiraat.crystamaehistoria.listeners.CrystaDowngradeListener;
-import io.github.sefiraat.crystamaehistoria.listeners.CrystalBreakListener;
-import io.github.sefiraat.crystamaehistoria.listeners.DisplayItemListener;
-import io.github.sefiraat.crystamaehistoria.listeners.EndermanInhibitorListener;
-import io.github.sefiraat.crystamaehistoria.listeners.MaintenanceListener;
-import io.github.sefiraat.crystamaehistoria.listeners.MiscListener;
-import io.github.sefiraat.crystamaehistoria.listeners.MobCandleListener;
-import io.github.sefiraat.crystamaehistoria.listeners.NetherDrainingListener;
-import io.github.sefiraat.crystamaehistoria.listeners.PhilosophersSprayListener;
-import io.github.sefiraat.crystamaehistoria.listeners.PoseChangerListener;
-import io.github.sefiraat.crystamaehistoria.listeners.RefractingLensListener;
-import io.github.sefiraat.crystamaehistoria.listeners.SatchelListener;
-import io.github.sefiraat.crystamaehistoria.listeners.SpellCastListener;
-import io.github.sefiraat.crystamaehistoria.listeners.SpellEffectListener;
-import io.github.sefiraat.crystamaehistoria.listeners.ThaumaturgicSaltsListener;
-import io.github.sefiraat.crystamaehistoria.listeners.DisplacedVoidListener;
+import io.github.sefiraat.crystamaehistoria.listeners.*;
 import org.bukkit.event.Listener;
 
 public class ListenerManager {
@@ -41,7 +24,9 @@ public class ListenerManager {
         addListener(new PoseChangerListener());
         addListener(new PhilosophersSprayListener());
         addListener(new MiscListener());
+
         addListener(new DisplacedVoidListener());
+        addListener(new MagicSummonListener());
     }
 
     private void addListener(Listener listener) {
