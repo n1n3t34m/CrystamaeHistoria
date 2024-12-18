@@ -4255,19 +4255,19 @@ DIRT:
       - all grounded.
     shards: [ 2,0,0,1,0,0,0,0,0 ]
 
-DIRT_PATH:
-  tier: 1
-  elements:
-    - ELEMENTAL
-    - HUMAN
-  story:
-    name: Walked all over
-    type: HUMAN
-    lore:
-      - Without complaint, a spirit allows
-      - itself to be walked all over so long
-      - as it feels it's helping others.
-    shards: [ 1,0,0,0,1,0,0,0,1 ]
+#DIRT_PATH:
+#  tier: 1
+#  elements:
+#    - ELEMENTAL
+#    - HUMAN
+#  story:
+#    name: Walked all over
+#    type: HUMAN
+#    lore:
+#      - Without complaint, a spirit allows
+#      - itself to be walked all over so long
+#      - as it feels it's helping others.
+#    shards: [ 1,0,0,0,1,0,0,0,1 ]
 
 DISPENSER:
   tier: 2
@@ -11562,21 +11562,21 @@ SOUL_TORCH:
       - from soul sand to produce light.
     shards: [ 1,0,1,0,0,0,0,1,0 ]
 
-SPAWNER:
-  tier: 3
-  elements:
-    - HUMAN
-    - ANIMAL
-    - CELESTIAL
-  story:
-    name: Angelic Bars
-    type: CELESTIAL
-    lore:
-      - The true nature of a spawner has been lost to
-      - time. It is not a generator of mobs, it is a
-      - dimensional prison made from Celestial Crysta,
-      - holding them back as best as possible.
-    shards: [ 0,0,0,0,1,1,2,0,0 ]
+#SPAWNER:
+#  tier: 3
+#  elements:
+#    - HUMAN
+#    - ANIMAL
+#    - CELESTIAL
+#  story:
+#    name: Angelic Bars
+#    type: CELESTIAL
+#    lore:
+#      - The true nature of a spawner has been lost to
+#      - time. It is not a generator of mobs, it is a
+#      - dimensional prison made from Celestial Crysta,
+#      - holding them back as best as possible.
+#    shards: [ 0,0,0,0,1,1,2,0,0 ]
 
 SPECTRAL_ARROW:
   tier: 2
