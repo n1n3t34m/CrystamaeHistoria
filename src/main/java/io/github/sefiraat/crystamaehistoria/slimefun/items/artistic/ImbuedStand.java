@@ -1,5 +1,6 @@
 package io.github.sefiraat.crystamaehistoria.slimefun.items.artistic;
 
+import io.github.sefiraat.crystamaehistoria.utils.GeneralUtils;
 import io.github.sefiraat.crystamaehistoria.utils.Keys;
 import io.github.thebusybiscuit.slimefun4.api.items.ItemGroup;
 import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItem;
@@ -7,6 +8,7 @@ import io.github.thebusybiscuit.slimefun4.api.items.SlimefunItemStack;
 import io.github.thebusybiscuit.slimefun4.api.recipes.RecipeType;
 import io.github.thebusybiscuit.slimefun4.core.handlers.ItemUseHandler;
 import io.github.thebusybiscuit.slimefun4.libraries.dough.data.persistent.PersistentDataAPI;
+import io.github.thebusybiscuit.slimefun4.libraries.dough.protection.Interaction;
 import org.bukkit.GameMode;
 import org.bukkit.Location;
 import org.bukkit.NamespacedKey;
@@ -38,16 +40,19 @@ public class ImbuedStand extends SlimefunItem {
             if (optionalBlock.isPresent()) {
                 final Block block = optionalBlock.get();
                 final Location location = block.getRelative(e.getClickedFace()).getLocation().add(0.5, 0.5, 0.5);
-                final Entity entity = location.getWorld().spawnEntity(
-                    location,
-                    EntityType.ARMOR_STAND,
-                    CreatureSpawnEvent.SpawnReason.CUSTOM
-                );
 
-                PersistentDataAPI.setBoolean(entity, KEY, true);
-                if (e.getPlayer().getGameMode() != GameMode.CREATIVE) {
-                    e.getItem().setAmount(e.getItem().getAmount() - 1);
-                }
+                if (location.getBlock().isEmpty() && GeneralUtils.hasPermission(e.getPlayer(), location, Interaction.PLACE_BLOCK)) {
+                    final Entity entity = location.getWorld().spawnEntity(
+                        location.setDirection(e.getPlayer().getEyeLocation().getDirection().multiply(-1)),  // Inverted
+                        EntityType.ARMOR_STAND,
+                        CreatureSpawnEvent.SpawnReason.CUSTOM
+                    );
+
+                    PersistentDataAPI.setBoolean(entity, KEY, true);
+                    if (e.getPlayer().getGameMode() != GameMode.CREATIVE) {
+                        e.getItem().setAmount(e.getItem().getAmount() - 1);
+                    }
+                } else e.cancel();
             }
         };
     }
