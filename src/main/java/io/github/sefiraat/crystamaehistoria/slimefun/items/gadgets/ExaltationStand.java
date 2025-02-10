@@ -71,7 +71,7 @@ public class ExaltationStand extends Stand {
 
         if (slimefunItem instanceof ExaltedItem) {
             final Location location = blockClicked.getLocation().add(0.5, 1.5, 0.5);
-            Item item = GeneralUtils.spawnDisplayItem(itemStack.asQuantity(1), location, "");
+            Item item = GeneralUtils.spawnDisplayItem(itemStack.asQuantity(1), location, slimefunItem.getItemName());
             itemStack.setAmount(itemStack.getAmount() - 1);
             BlockStorage.addBlockInfo(blockClicked, PDC_ITEM, item.getUniqueId().toString());
             itemMap.put(blockClicked.getLocation(), item.getUniqueId());

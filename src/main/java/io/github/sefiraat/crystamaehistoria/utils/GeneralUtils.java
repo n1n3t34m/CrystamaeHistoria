@@ -269,6 +269,7 @@ public final class GeneralUtils {
         item.setGravity(false);
         item.setVelocity(new Vector(0, 0, 0));
         item.setCanPlayerPickup(false);
+        item.setCanMobPickup(false);
         item.setPickupDelay(Integer.MAX_VALUE);
         return item;
     }

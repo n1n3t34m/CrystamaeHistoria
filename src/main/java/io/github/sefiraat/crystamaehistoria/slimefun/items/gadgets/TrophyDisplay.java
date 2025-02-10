@@ -115,7 +115,7 @@ public class TrophyDisplay extends Stand {
                 clone.setItemMeta(itemMeta);
                 addItem(blockClicked, clone, ThemeType.RANK_BLOCK_SME.getColor() + materialName);
                 this.locationConsumer = this::defaultConsumer;
-            }
+            } else player.sendMessage(ThemeType.RANK_BLOCK_SME.getColor() + ThemeType.RANK_BLOCK_SME.getLoreLine() + ThemeType.WARNING.getColor() + " block rank required");
         }
     }
 
