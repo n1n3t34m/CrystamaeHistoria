@@ -30,7 +30,7 @@ public class ConfigManager {
         this.blocks = getConfig("blocks.yml", true);
         this.stories = getConfig("generic-stories.yml", true);
         this.playerStats = getConfig("player_stats.yml", false);
-        this.blockColors = getConfig("block_colors.yml", false);
+        this.blockColors = getConfig("block_colors.yml", true);
         this.spells = getConfig("spells.yml", false);
     }
 
